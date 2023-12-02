@@ -7,7 +7,6 @@ def numfind(text : str) -> int:
 
 digitsword = ['one','two','three','four','five','six','seven','eight','nine']
 #Task 2
-
 def replacement(text):
     tmp = ""
     for i in range(0, len(text)):
@@ -19,13 +18,11 @@ def replacement(text):
                 tmp += str(digitsword.index(text[i:i+4])+1)
         if i + 5 < len(text) and text[i: i + 5] in digitsword:
                 tmp += str(digitsword.index(text[i:i+5])+1)
-    return tmp
+    return int(tmp[0] + tmp[-1])
 
 def numfind2(text):
-    text = replacement(text)
-    return int(str(text[0])[0] + str(text[-1])[-1])
+    return replacement(text)
 
-    
 input, tmp = open("inputone.txt", "r"), 0
 for line in input:
     tmp += numfind2(line)
